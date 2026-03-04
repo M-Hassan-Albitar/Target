@@ -47,7 +47,7 @@ st.markdown("""
         margin-bottom: 20px;
     }
     .box2 {
-        background-color: salmon;
+        background-color: red;
         text-align: center;
         padding: 20px;
         border-radius: 10px;
@@ -59,7 +59,7 @@ match branch_name:
     case "أبها":
         password = st.text_input("", key="password", type="password", placeholder="اكتب الباسورد الخاص بفرعك")
         if password == "M1":
-            st.info("Abha ✅")
+            st.info("أشرف ✅")
             # First text section
             st.markdown('<div class="box1">'
                         '<h3>التارجت</h3>'
@@ -75,7 +75,7 @@ match branch_name:
     case "خميس مشيط":
         password = st.text_input("", key="password", type="password", placeholder="اكتب الباسورد الخاص بفرعك")
         if password == "H2":
-            st.info("khamis Mushit ✅")
+            st.info("ممدوح أبوجامع ✅")
             # First text section
             st.markdown('<div class="box1">'
                         '<h3>التارجت</h3>'
@@ -92,7 +92,7 @@ match branch_name:
     case "جيزان":
         password = st.text_input("", key="password", type="password", placeholder="اكتب الباسورد الخاص بفرعك")
         if password == "A3":
-            st.info("Jizan ✅")
+            st.info("أحمد عاطف ✅")
             # First text section
             st.markdown('<div class="box1">'
                         '<h3>التارجت</h3>'
@@ -109,7 +109,7 @@ match branch_name:
     case "نجران":
         password = st.text_input("", key="password", type="password", placeholder="اكتب الباسورد الخاص بفرعك")
         if password == "A4":
-            st.info("Najran ✅")
+            st.info("أسامة نورالدين ✅")
             # First text section
             st.markdown('<div class="box1">'
                         '<h3>التارجت</h3>'
