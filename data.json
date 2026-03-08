@@ -4,22 +4,22 @@
       "id": 1,
       "Name": "Abha",
       "Target": "139,319",
-      "Residual": "- 47,277",
-      "Percentage": "- 34 %"
+      "Residual": "- 44,473",
+      "Percentage": "- 32 %"
     },
     {
       "id": 2,
       "Name": "Albaha",
       "Target": "67,941",
-      "Residual": "- 4,522",
-      "Percentage": "- 7 %"
+      "Residual": "- 2,044",
+      "Percentage": "- 3 %"
     },
     {
       "id": 3,
       "Name": "Jizan",
       "Target": "320,384",
-      "Residual": "- 60,836",
-      "Percentage": "- 19 %"
+      "Residual": "- 54,293",
+      "Percentage": "- 17 %"
     },
     {
       "id": 4,
@@ -32,8 +32,8 @@
       "id": 5,
       "Name": "Najran",
       "Target": "132,361",
-      "Residual": "- 17,515",
-      "Percentage": "- 13 %"
+      "Residual": "- 13,633",
+      "Percentage": "- 10 %"
     }
   ]
 }
