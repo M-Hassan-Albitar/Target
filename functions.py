@@ -14,10 +14,10 @@ def save_json(new_data):
 
 if __name__ == '__main__':
     new_data = {
-        "Branches": [{"id": 1, "Name": "Abha", "Target": "139,319", "Residual": "- 44,473", "Percentage": "- 32 %"},
-                     {"id": 2, "Name": "Albaha", "Target": "67,941", "Residual": "- 2,044", "Percentage": "- 3 %"},
-                     {"id": 3, "Name": "Jizan", "Target": "320,384", "Residual": "- 54,293", "Percentage": "- 17 %"},
-                     {"id": 4, "Name": "Khamis", "Target": "84,243", "Residual": "- 24,293", "Percentage": "- 29 %"},
-                     {"id": 5, "Name": "Najran", "Target": "132,361", "Residual": "- 13,633", "Percentage": "- 10 %"}]}
+        "Branches": [{"id": 1, "Name": "Abha", "Target": "139,319", "Residual": "- 41,206", "Percentage": "- 30 %"},
+                     {"id": 2, "Name": "Albaha", "Target": "67,941", "Residual": "+ 868", "Percentage": "+ 1 %"},
+                     {"id": 3, "Name": "Jizan", "Target": "320,384", "Residual": "- 47,776", "Percentage": "- 15 %"},
+                     {"id": 4, "Name": "Khamis", "Target": "84,243", "Residual": "- 21,358", "Percentage": "- 25 %"},
+                     {"id": 5, "Name": "Najran", "Target": "132,361", "Residual": "- 9,039", "Percentage": "- 7 %"}]}
 
     save_json(new_data)
