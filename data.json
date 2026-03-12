@@ -11,14 +11,14 @@
       "id": 2,
       "Name": "Albaha",
       "Target": "67,941",
-      "Residual": "+ 1,432",
-      "Percentage": "+ 2 %"
+      "Residual": "+ 2,831",
+      "Percentage": "+ 4 %"
     },
     {
       "id": 3,
       "Name": "Jizan",
       "Target": "320,384",
-      "Residual": "- 42,372",
+      "Residual": "- 40,589",
       "Percentage": "- 13 %"
     },
     {
@@ -32,8 +32,8 @@
       "id": 5,
       "Name": "Najran",
       "Target": "132,361",
-      "Residual": "- 3,784",
-      "Percentage": "- 3 %"
+      "Residual": "- 986",
+      "Percentage": "- 1 %"
     }
   ]
 }
