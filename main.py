@@ -30,7 +30,12 @@ branches = ["اختر الفرع", "أبها", "خميس مشيط", "جيزان"
 # Get current date and time
 now = datetime.now()
 today_date = now.strftime("%A, %d/%m/%Y")
+today = now.strftime("%d")
 current_time = now.strftime("%H:%M:%S")
+
+THIS_MONTH = 30
+RESIDUAL_DAY = THIS_MONTH - int(today)
+ITEM_PRICE = 500
 
 st.set_page_config(page_title="Alfakhera-south", layout="centered")
 st.title("الفاخرة للخياطة الرجالية", text_alignment="center")
@@ -71,6 +76,8 @@ match branch_name:
                         '<h3>المتبقي على التارجت</h3>'
                         f'<h5>{abha[2]}</h5>'
                         f'<h2>"{abha[1]}"</h2>'
+                        f'<h2>معدل الثياب اليومي لتحقيق التارجت</h2>'
+                        f'<h2>"{int(abha[1]) / RESIDUAL_DAY / ITEM_PRICE}"</h2>'
                         '</div>', unsafe_allow_html=True)
     case "خميس مشيط":
         password = st.text_input("", key="password", type="password", placeholder="اكتب الباسورد الخاص بفرعك")
