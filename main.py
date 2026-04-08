@@ -35,7 +35,15 @@ current_time = now.strftime("%H:%M:%S")
 
 THIS_MONTH = 30
 RESIDUAL_DAY = THIS_MONTH - int(today)
-ITEM_PRICE = 500
+ITEM_PRICE = 400
+
+RESIDUAL_MSG = "معدل الثياب التقريبي الحالي لتحقيق المتبقي من التارجت"
+
+
+# Calculate Residual
+def calc_residual(branch):
+    return round(int(branch[1].replace(',', '').replace(' ', '')) / RESIDUAL_DAY / ITEM_PRICE) * -1
+
 
 st.set_page_config(page_title="Alfakhera-south", layout="centered")
 st.title("الفاخرة للخياطة الرجالية", text_alignment="center")
@@ -76,9 +84,10 @@ match branch_name:
                         '<h3>المتبقي على التارجت</h3>'
                         f'<h5>{abha[2]}</h5>'
                         f'<h2>"{abha[1]}"</h2>'
-                        f'<h2>معدل الثياب اليومي لتحقيق التارجت</h2>'
-                        f'<h2>"{int(abha[1]) / RESIDUAL_DAY / ITEM_PRICE}"</h2>'
+                        f'<h6>{RESIDUAL_MSG}</h6>'
+                        f'<h6>"{calc_residual(abha)}"</h6>'
                         '</div>', unsafe_allow_html=True)
+            # st.write(int(abha[1].replace(',', '').replace(' ', '')))
     case "خميس مشيط":
         password = st.text_input("", key="password", type="password", placeholder="اكتب الباسورد الخاص بفرعك")
         if password == "H2":
@@ -94,6 +103,8 @@ match branch_name:
                         '<h3>المتبقي على التارجت</h3>'
                         f'<h5>{khamis[2]}</h5>'
                         f'<h2>"{khamis[1]}"</h2>'
+                        f'<h6>{RESIDUAL_MSG}</h6>'
+                        f'<h6>"{calc_residual(khamis)}"</h6>'
                         '</div>', unsafe_allow_html=True)
 
     case "جيزان":
@@ -111,6 +122,8 @@ match branch_name:
                         '<h3>المتبقي على التارجت</h3>'
                         f'<h5>{jizan[2]}</h5>'
                         f'<h2>"{jizan[1]}"</h2>'
+                        f'<h6>{RESIDUAL_MSG}</h6>'
+                        f'<h6>"{calc_residual(jizan)}"</h6>'
                         '</div>', unsafe_allow_html=True)
 
     case "نجران":
@@ -128,6 +141,8 @@ match branch_name:
                         '<h3>المتبقي على التارجت</h3>'
                         f'<h5>{najran[2]}</h5>'
                         f'<h2>"{najran[1]}"</h2>'
+                        f'<h6>{RESIDUAL_MSG}</h6>'
+                        f'<h6>"{calc_residual(najran)}"</h6>'
                         '</div>', unsafe_allow_html=True)
 
     case "الباحة":
@@ -145,4 +160,6 @@ match branch_name:
                         '<h3>المتبقي على التارجت</h3>'
                         f'<h5>{albaha[2]}</h5>'
                         f'<h2>"{albaha[1]}"</h2>'
+                        f'<h6>{RESIDUAL_MSG}</h6>'
+                        f'<h6>"{calc_residual(albaha)}"</h6>'
                         '</div>', unsafe_allow_html=True)
