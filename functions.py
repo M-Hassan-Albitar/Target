@@ -14,10 +14,10 @@ def save_json(new_data):
 
 if __name__ == '__main__':
     new_data = {
-        "Branches": [{"id": 1, "Name": "Abha", "Target": "31,008", "Residual": "- 20,508", "Percentage": "- 66 %"},
+        "Branches": [{"id": 1, "Name": "Abha", "Target": "31,008", "Residual": "- 15,647", "Percentage": "- 50 %"},
                      {"id": 2, "Name": "Albaha", "Target": "18,837", "Residual": "- 13,738", "Percentage": "- 73 %"},
-                     {"id": 3, "Name": "Jizan", "Target": "42,099", "Residual": "- 36,490", "Percentage": "- 87 %"},
-                     {"id": 4, "Name": "Khamis", "Target": "14,011", "Residual": "- 10,786", "Percentage": "- 77 %"},
-                     {"id": 5, "Name": "Najran", "Target": "26,769", "Residual": "- 21,637", "Percentage": "- 81 %"}]}
+                     {"id": 3, "Name": "Jizan", "Target": "42,099", "Residual": "- 35,188", "Percentage": "- 84 %"},
+                     {"id": 4, "Name": "Khamis", "Target": "14,011", "Residual": "- 9,769", "Percentage": "- 70 %"},
+                     {"id": 5, "Name": "Najran", "Target": "26,769", "Residual": "- 18,791", "Percentage": "- 70 %"}]}
 
     save_json(new_data)
