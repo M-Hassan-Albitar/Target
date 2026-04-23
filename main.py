@@ -148,7 +148,7 @@ match branch_name:
     case "الباحة":
         password = st.text_input("", key="password", type="password", placeholder="اكتب الباسورد الخاص بفرعك")
         if password == "Y5":
-            st.info("Albaha ✅")
+            st.info("جمال عبداللطيف ✅")
             # First text section
             st.markdown('<div class="box1">'
                         '<h3>التارجت</h3>'
