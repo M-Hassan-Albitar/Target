@@ -87,14 +87,14 @@ def render_target_dashboard(
 
     card("تارجت الشهر", f"{target} ريال")
     card("ماتم تحقيقه حتى الأن", f"{achieved} ريال")
-    card("المتبقي", f"{remaining} ريال")
-    card("المعدل التقريبي اليومي المطلوب", f"{daily_needed:.1f} ريال / يوم")
-
+    st.divider()
     # ---------------------------
     # Progress Bar
     # ---------------------------
     st.progress(min(percent / 100, 1.0))
-    st.write(f"📈 نسبة الإنجاز: {percent:.1f}%")
+    st.text(f"📈 نسبة الإنجاز: {percent:.1f}%")
+    card("المتبقي", f"{remaining} ريال")
+    card("المعدل التقريبي اليومي المطلوب", f"{daily_needed:.1f} ريال / يوم")
 
     # ---------------------------
     # Chart (optional)
