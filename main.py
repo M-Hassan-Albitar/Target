@@ -6,23 +6,14 @@ from dashboard import render_target_dashboard
 import pandas as pd
 from datetime import datetime
 
+# Style = .streamlit/config.toml
+
 # Data
 DATA_URL = "https://docs.google.com/spreadsheets/d/"
 SHEET_ID = "1Tpy43YMZbZctCq9a0NNrx1jMTJcRsOoDiYMVnj73r64"
 
 # Arabic Support
 support_arabic_text()
-# Theming
-var = [theme]
-base = "light"
-primaryColor = "#6A5ACD"  # slateBlue
-backgroundColor = "#F5FFFA"  # mintCream
-secondaryBackgroundColor = "#8FBC8F"  # darkSeaGreen
-borderRadius = "0.5rem"
-
-# theme.sidebar
-# backgroundColor = "#F0F8FF"  # aliceBlue
-# secondaryBackgroundColor = "#87CEEB"  # skyBlue
 
 # ---------------------------
 # RTL + input alignment CSS
