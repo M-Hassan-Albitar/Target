@@ -1,8 +1,7 @@
 import streamlit as st
+import pandas as pd
+import plotly.express as px
 
-
-# import pandas as pd
-# import plotly.express as px
 
 def render_target_dashboard(
         month_name: str,
@@ -87,24 +86,25 @@ def render_target_dashboard(
 
     card("تارجت الشهر", f"{target} ريال")
     card("ماتم تحقيقه حتى الأن", f"{achieved} ريال")
+    card("المتبقي", f"{remaining} ريال")
+    card("التارجت اليومي المطلوب", f"{daily_needed:.1f} ريال / يوم")
     st.divider()
     # ---------------------------
     # Progress Bar
     # ---------------------------
     st.progress(min(percent / 100, 1.0))
     st.text(f"📈 نسبة الإنجاز: {percent:.1f}%")
-    card("المتبقي", f"{remaining} ريال")
-    card("المعدل التقريبي اليومي المطلوب", f"{daily_needed:.1f} ريال / يوم")
 
     # ---------------------------
     # Chart (optional)
     # ---------------------------
-    # if daily_history:
-    #     df = pd.DataFrame({
-    #         "اليوم": list(range(1, len(daily_history) + 1)),
-    #         "المبيعات": daily_history
-    #     })
-    #
-    #     fig = px.line(df, x="اليوم", y="المبيعات", markers=True,
-    #                   title="📊 التقدم اليومي")
-    #     st.plotly_chart(fig, use_container_width=True)
+
+
+def show_chart(old_df_name, branch_name):
+    new_df = pd.DataFrame({
+        "Headers": ["التارجت", "ماتم تحقيقه الى الان"],
+        "Values": [int(old_df_name.loc[old_df_name["Branches"] == branch_name, "Target"].squeeze().replace(",", ""))
+            , int(old_df_name.loc[old_df_name["Branches"] == branch_name, "Achieved"].squeeze().replace(",", ""))]
+    })
+    figure1 = px.bar(new_df, x=["التارجت", "ماتم تحقيقه الى الان"], y="Values", text="Values", color='Headers')
+    return st.plotly_chart(figure1)

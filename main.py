@@ -1,14 +1,13 @@
 import streamlit as st
 import hashlib
-from altair.vegalite.v6.theme import theme
 from arabic_support import support_arabic_text
-from dashboard import render_target_dashboard
+from dashboard import render_target_dashboard, show_chart
 import pandas as pd
 from datetime import datetime
-import matplotlib
 
-matplotlib.use('TkAgg')  # Or 'QtAgg' 'TkAgg'
-import matplotlib.pyplot as plt
+# import matplotlib
+# matplotlib.use('TkAgg')  # Or 'QtAgg' 'TkAgg'
+# import matplotlib.pyplot as plt
 
 # Style = .streamlit/config.toml
 
@@ -148,6 +147,7 @@ else:
                 target=int(df.loc[df["Branches"] == "ABHA", "Target"].iloc[0].replace(",", "")),
                 achieved=int(df.loc[df["Branches"] == "ABHA", "Achieved"].iloc[0].replace(",", "")),
             )
+            show_chart(old_df_name=df, branch_name="ABHA")
         case "L":
             st.divider()
             render_target_dashboard(
@@ -155,6 +155,8 @@ else:
                 target=int(df.loc[df["Branches"] == "ALBAHA", "Target"].iloc[0].replace(",", "")),
                 achieved=int(df.loc[df["Branches"] == "ALBAHA", "Achieved"].iloc[0].replace(",", "")),
             )
+
+            show_chart(old_df_name=df, branch_name="ALBAHA")
         case "G":
             st.divider()
             render_target_dashboard(
@@ -162,6 +164,8 @@ else:
                 target=int(df.loc[df["Branches"] == "JAZAN", "Target"].iloc[0].replace(",", "")),
                 achieved=int(df.loc[df["Branches"] == "JAZAN", "Achieved"].iloc[0].replace(",", "")),
             )
+
+            show_chart(old_df_name=df, branch_name="JAZAN")
         case "Kb":
             st.divider()
             render_target_dashboard(
@@ -169,6 +173,8 @@ else:
                 target=int(df.loc[df["Branches"] == "KHAMIS", "Target"].iloc[0].replace(",", "")),
                 achieved=int(df.loc[df["Branches"] == "KHAMIS", "Achieved"].iloc[0].replace(",", "")),
             )
+
+            show_chart(old_df_name=df, branch_name="KHAMIS")
         case "W":
             st.divider()
             render_target_dashboard(
@@ -177,7 +183,7 @@ else:
                 achieved=int(df.loc[df["Branches"] == "NAJRAN", "Achieved"].iloc[0].replace(",", "")),
             )
 
-    # Example usage
+            show_chart(old_df_name=df, branch_name="NAJRAN")
 
     # Logout button
     if st.button("تسجيل الخروج"):
