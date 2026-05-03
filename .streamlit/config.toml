@@ -1,10 +1,25 @@
+# =====================
+# Dark Purple Theme
+# =====================
+
 [theme]
-base = "light"
-primaryColor = "#6A5ACD"  # slateBlue
-backgroundColor = "#F5FFFA"  # mintCream
-secondaryBackgroundColor = "#8FBC8F"  # darkSeaGreen
-borderRadius = "0.5rem"
+base = "dark"
+borderColor = "#7B68EE" #"mediumSlateBlue"
+showWidgetBorder = false
 
 [theme.sidebar]
-backgroundColor = "#F0F8FF"  # aliceBlue
-secondaryBackgroundColor = "#87CEEB"  # skyBlue
+showWidgetBorder = true
+
+# =====================
+# Green Theme
+# =====================
+#[theme]
+#base = "light"
+#primaryColor = "#6A5ACD"  # slateBlue
+#backgroundColor = "#F5FFFA"  # mintCream
+#secondaryBackgroundColor = "#8FBC8F"  # darkSeaGreen
+#borderRadius = "0.5rem"
+#
+#[theme.sidebar]
+#backgroundColor = "#F0F8FF"  # aliceBlue
+#secondaryBackgroundColor = "#87CEEB"  # skyBlue

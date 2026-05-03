@@ -5,6 +5,10 @@ from arabic_support import support_arabic_text
 from dashboard import render_target_dashboard
 import pandas as pd
 from datetime import datetime
+import matplotlib
+
+matplotlib.use('TkAgg')  # Or 'QtAgg' 'TkAgg'
+import matplotlib.pyplot as plt
 
 # Style = .streamlit/config.toml
 
