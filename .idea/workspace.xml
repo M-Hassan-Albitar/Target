@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Modify the error" />
+    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Clear the sidebar">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -437,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777900900283</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Clear the sidebar">
+      <option name="closed" value="true" />
+      <created>1777901207251</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1777901207251</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,6 +484,7 @@
     <MESSAGE value="Add graphical chart" />
     <MESSAGE value="Add new features to the system CRM" />
     <MESSAGE value="Modify the error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modify the error" />
+    <MESSAGE value="Clear the sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clear the sidebar" />
   </component>
 </project>
