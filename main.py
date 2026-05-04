@@ -1,5 +1,8 @@
 import streamlit as st
 import time
+import os
+# Set a dummy display variable BEFORE importing pyautogui
+os.environ['DISPLAY'] = ':0'
 import pyautogui
 import hashlib
 from arabic_support import support_arabic_text
