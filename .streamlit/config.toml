@@ -1,14 +1,28 @@
 # =====================
-# Dark Purple Theme
+# Light Theme
 # =====================
 
 [theme]
-base = "dark"
-borderColor = "#7B68EE" #"mediumSlateBlue"
-showWidgetBorder = false
+base = "light"
+backgroundColor = "white"
+secondaryBackgroundColor = "lavender"
+codeBackgroundColor = "powderBlue"
 
 [theme.sidebar]
-showWidgetBorder = true
+backgroundColor = "ghostWhite"
+secondaryBackgroundColor = "lavender"
+
+# =====================
+# Dark Purple Theme
+# =====================
+
+#[theme]
+#base = "dark"
+#borderColor = "#7B68EE" #"mediumSlateBlue"
+#showWidgetBorder = false
+#
+#[theme.sidebar]
+#showWidgetBorder = true
 
 # =====================
 # Green Theme
