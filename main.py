@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 import os
+
 # Set a dummy display variable BEFORE importing pyautogui
 os.environ['DISPLAY'] = ':0'
 import pyautogui
@@ -9,9 +10,6 @@ from arabic_support import support_arabic_text
 from dashboard import render_target_dashboard, show_chart
 import pandas as pd
 from datetime import datetime
-
-if 'my_key' not in st.session_state:
-    st.session_state['my_key'] = 'default_value'
 
 # import matplotlib
 # matplotlib.use('TkAgg')  # Or 'QtAgg' 'TkAgg'
