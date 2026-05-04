@@ -199,15 +199,15 @@ else:
     # Logout button
     if st.button("تسجيل الخروج"):
         logout()
-        if st.session_state.get('authentication_status') == False or st.session_state.get(
-                'authentication_status') is None:
-            st.markdown(
-                """
-                <style>
-                    [data-testid="stSidebar"] { display: none; }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
 
         st.rerun()
+if st.session_state.get('authentication_status') == False or st.session_state.get(
+        'authentication_status') is None:
+    st.markdown(
+        """
+        <style>
+            [data-testid="stSidebar"] { display: none; }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
