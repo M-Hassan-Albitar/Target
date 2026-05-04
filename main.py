@@ -1,10 +1,4 @@
 import streamlit as st
-import time
-import os
-
-# Set a dummy display variable BEFORE importing pyautogui
-os.environ['DISPLAY'] = ':0'
-import pyautogui
 import hashlib
 from arabic_support import support_arabic_text
 from dashboard import render_target_dashboard, show_chart
@@ -205,6 +199,4 @@ else:
     # Logout button
     if st.button("تسجيل الخروج"):
         logout()
-        time.sleep(2)  # Time to switch to the browser window
-        pyautogui.hotkey('f5')
         st.rerun()
