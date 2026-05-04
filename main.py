@@ -7,6 +7,9 @@ from dashboard import render_target_dashboard, show_chart
 import pandas as pd
 from datetime import datetime
 
+if 'my_key' not in st.session_state:
+    st.session_state['my_key'] = 'default_value'
+
 # import matplotlib
 # matplotlib.use('TkAgg')  # Or 'QtAgg' 'TkAgg'
 # import matplotlib.pyplot as plt
