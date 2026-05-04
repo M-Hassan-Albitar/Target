@@ -1,6 +1,6 @@
+import streamlit as st
 import time
 import pyautogui
-import streamlit as st
 import hashlib
 from arabic_support import support_arabic_text
 from dashboard import render_target_dashboard, show_chart
