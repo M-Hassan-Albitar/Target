@@ -199,4 +199,7 @@ else:
     # Logout button
     if st.button("تسجيل الخروج"):
         logout()
+        # Clear the sidebar and hide it
+        st.sidebar.empty()  # Empty the sidebar to hide it
+        st.write("You have been logged out.")
         st.rerun()
