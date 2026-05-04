@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Update the app theme">
+    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Add graphical chart">
+      <change afterPath="$PROJECT_DIR$/abha_sb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -58,6 +59,11 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/m_alb/PycharmProjects/Target&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m_alb\PycharmProjects\Target" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.functions">
     <configuration name="functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Target" />
@@ -373,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777807042574</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Add graphical chart">
+      <option name="closed" value="true" />
+      <created>1777813402579</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1777813402582</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -407,6 +421,7 @@
     <MESSAGE value="Create huge changes" />
     <MESSAGE value="Update little feature" />
     <MESSAGE value="Update the app theme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the app theme" />
+    <MESSAGE value="Add graphical chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add graphical chart" />
   </component>
 </project>

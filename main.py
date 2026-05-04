@@ -1,3 +1,5 @@
+import time
+import pyautogui
 import streamlit as st
 import hashlib
 from arabic_support import support_arabic_text
@@ -56,6 +58,17 @@ current_time = now.strftime("%H:%M:%S")
 
 # Get data
 df = pd.read_csv(DATA_URL + SHEET_ID + "/export?format=csv")
+
+
+# ===============================
+def abha_main():
+    st.divider()
+    render_target_dashboard(
+        month_name=month_name,
+        target=int(df.loc[df["Branches"] == "ABHA", "Target"].iloc[0].replace(",", "")),
+        achieved=int(df.loc[df["Branches"] == "ABHA", "Achieved"].iloc[0].replace(",", "")),
+    )
+    show_chart(old_df_name=df, branch_name="ABHA")
 
 
 # ---------------------------
@@ -136,18 +149,18 @@ else:
     # Logged-in view
     st.success(f"مرحباً، {st.session_state.username}")
 
-    st.markdown("<h3>### 🎉 تم تسجيل الدخول إلى النظام</h3>", unsafe_allow_html=True, )
+    st.markdown("### 🎉 تم تسجيل الدخول إلى النظام")
 
     # Example protected content
     match st.session_state.username:
         case "Ka":
-            st.divider()
-            render_target_dashboard(
-                month_name=month_name,
-                target=int(df.loc[df["Branches"] == "ABHA", "Target"].iloc[0].replace(",", "")),
-                achieved=int(df.loc[df["Branches"] == "ABHA", "Achieved"].iloc[0].replace(",", "")),
-            )
-            show_chart(old_df_name=df, branch_name="ABHA")
+
+            main_page = st.Page(abha_main, title="الصفحة الرئيسية", icon="📈")
+            analyze_page = st.Page("abha_sb.py", title="العملاء", icon="📈")
+
+            # Create navigation and run it
+            pg = st.navigation([main_page, analyze_page])
+            pg.run()
         case "L":
             st.divider()
             render_target_dashboard(
@@ -188,4 +201,6 @@ else:
     # Logout button
     if st.button("تسجيل الخروج"):
         logout()
+        time.sleep(2)  # Time to switch to the browser window
+        pyautogui.hotkey('f5')
         st.rerun()

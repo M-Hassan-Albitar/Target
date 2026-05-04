@@ -108,3 +108,7 @@ def show_chart(old_df_name, branch_name):
     })
     figure1 = px.bar(new_df, x=["التارجت", "ماتم تحقيقه الى الان"], y="Values", text="Values", color='Headers')
     return st.plotly_chart(figure1)
+
+# # ------------------ الفوتر ------------------
+# st.markdown("---")
+# st.markdown("تصميم وانشاء محمد عبدالقادر - مشرف المنطقة الجنوبية")
