@@ -159,6 +159,16 @@ else:
             # Create navigation and run it
             pg = st.navigation([main_page, analyze_page])
             pg.run()
+            if st.session_state.get('authentication_status') == False or st.session_state.get(
+                    'authentication_status') is None:
+                st.markdown(
+                    """
+                    <style>
+                        [data-testid="stSidebar"] { display: none; }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
         case "L":
             st.divider()
             render_target_dashboard(
@@ -201,13 +211,3 @@ else:
         logout()
 
         st.rerun()
-    if st.session_state.get('authentication_status') == False or st.session_state.get(
-            'authentication_status') is None:
-        st.markdown(
-            """
-            <style>
-                [data-testid="stSidebar"] { display: none; }
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
