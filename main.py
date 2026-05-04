@@ -153,8 +153,8 @@ else:
     match st.session_state.username:
         case "Ka":
 
-            main_page = st.Page(abha_main, title="الصفحة الرئيسية", icon="📈")
-            analyze_page = st.Page("abha_sb.py", title="العملاء", icon="📈")
+            main_page = st.Page(abha_main, title="الصفحة الرئيسية")
+            analyze_page = st.Page("customers.py", title="العملاء")
 
             # Create navigation and run it
             pg = st.navigation([main_page, analyze_page])
