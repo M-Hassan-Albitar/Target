@@ -1,19 +1,18 @@
 import streamlit as st
 import hashlib
 from arabic_support import support_arabic_text
-from dashboard import render_target_dashboard, show_chart
-import pandas as pd
-from datetime import datetime
+import customers
+from pages.branches_homepages import abha_main, albaha_main, jazan_main, khamis_main, najran_main
+import os
+from dotenv import load_dotenv
 
-# import matplotlib
-# matplotlib.use('TkAgg')  # Or 'QtAgg' 'TkAgg'
-# import matplotlib.pyplot as plt
-
-# Style = .streamlit/config.toml
-
+load_dotenv()
 # Data
-DATA_URL = "https://docs.google.com/spreadsheets/d/"
-SHEET_ID = "1Tpy43YMZbZctCq9a0NNrx1jMTJcRsOoDiYMVnj73r64"
+ABHA_CSV_URL = os.getenv("ABHA_CSV_URL")
+ALBAHA_CSV_URL = os.getenv("ALBAHA_CSV_URL")
+JAZAN_CSV_URL = os.getenv("JAZAN_CSV_URL")
+KHAMIS_CSV_URL = os.getenv("KHAMIS_CSV_URL")
+NAJRAN_CSV_URL = os.getenv("NAJRAN_CSV_URL")
 
 # Arabic Support
 support_arabic_text()
@@ -45,28 +44,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
-# Date and time
-# Get current date and time
-now = datetime.now()
-today_date = now.strftime("%A, %d/%m/%Y")
-today = now.strftime("%d")
-month_name = now.strftime("%m-%Y")
-current_time = now.strftime("%H:%M:%S")
-
-# Get data
-df = pd.read_csv(DATA_URL + SHEET_ID + "/export?format=csv")
-
-
-# ===============================
-def abha_main():
-    st.divider()
-    render_target_dashboard(
-        month_name=month_name,
-        target=int(df.loc[df["Branches"] == "ABHA", "Target"].iloc[0].replace(",", "")),
-        achieved=int(df.loc[df["Branches"] == "ABHA", "Achieved"].iloc[0].replace(",", "")),
-    )
-    show_chart(old_df_name=df, branch_name="ABHA")
 
 
 # ---------------------------
@@ -154,48 +131,40 @@ else:
         case "Ka":
 
             main_page = st.Page(abha_main, title="الصفحة الرئيسية")
-            analyze_page = st.Page("customers.py", title="العملاء")
+            analyze_page = st.Page(lambda: customers.c_analyze(ABHA_CSV_URL), title="العملاء")
 
             # Create navigation and run it
             pg = st.navigation([main_page, analyze_page])
             pg.run()
 
         case "L":
-            st.divider()
-            render_target_dashboard(
-                month_name=month_name,
-                target=int(df.loc[df["Branches"] == "ALBAHA", "Target"].iloc[0].replace(",", "")),
-                achieved=int(df.loc[df["Branches"] == "ALBAHA", "Achieved"].iloc[0].replace(",", "")),
-            )
+            main_page = st.Page(albaha_main, title="الصفحة الرئيسية")
+            analyze_page = st.Page(lambda: customers.c_analyze(ALBAHA_CSV_URL), title="العملاء")
 
-            show_chart(old_df_name=df, branch_name="ALBAHA")
+            # Create navigation and run it
+            pg = st.navigation([main_page, analyze_page])
+            pg.run()
         case "G":
-            st.divider()
-            render_target_dashboard(
-                month_name=month_name,
-                target=int(df.loc[df["Branches"] == "JAZAN", "Target"].iloc[0].replace(",", "")),
-                achieved=int(df.loc[df["Branches"] == "JAZAN", "Achieved"].iloc[0].replace(",", "")),
-            )
+            main_page = st.Page(jazan_main, title="الصفحة الرئيسية")
+            analyze_page = st.Page(lambda: customers.c_analyze(JAZAN_CSV_URL), title="العملاء")
 
-            show_chart(old_df_name=df, branch_name="JAZAN")
+            # Create navigation and run it
+            pg = st.navigation([main_page, analyze_page])
+            pg.run()
         case "Kb":
-            st.divider()
-            render_target_dashboard(
-                month_name=month_name,
-                target=int(df.loc[df["Branches"] == "KHAMIS", "Target"].iloc[0].replace(",", "")),
-                achieved=int(df.loc[df["Branches"] == "KHAMIS", "Achieved"].iloc[0].replace(",", "")),
-            )
+            main_page = st.Page(khamis_main, title="الصفحة الرئيسية")
+            analyze_page = st.Page(lambda: customers.c_analyze(KHAMIS_CSV_URL), title="العملاء")
 
-            show_chart(old_df_name=df, branch_name="KHAMIS")
+            # Create navigation and run it
+            pg = st.navigation([main_page, analyze_page])
+            pg.run()
         case "W":
-            st.divider()
-            render_target_dashboard(
-                month_name=month_name,
-                target=int(df.loc[df["Branches"] == "NAJRAN", "Target"].iloc[0].replace(",", "")),
-                achieved=int(df.loc[df["Branches"] == "NAJRAN", "Achieved"].iloc[0].replace(",", "")),
-            )
+            main_page = st.Page(najran_main, title="الصفحة الرئيسية")
+            analyze_page = st.Page(lambda: customers.c_analyze(NAJRAN_CSV_URL), title="العملاء")
 
-            show_chart(old_df_name=df, branch_name="NAJRAN")
+            # Create navigation and run it
+            pg = st.navigation([main_page, analyze_page])
+            pg.run()
 
     # Logout button
     if st.button("تسجيل الخروج"):

@@ -1,0 +1,88 @@
+import streamlit as st
+from datetime import datetime
+from dashboard import render_target_dashboard, show_chart
+import pandas as pd
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+# Get data
+MAIN_DATA_URL = os.getenv("MAIN_DATA_URL")
+df = pd.read_csv(MAIN_DATA_URL)
+
+# Date and time
+# Get current date and time
+now = datetime.now()
+today_date = now.strftime("%A, %d/%m/%Y")
+today = now.strftime("%d")
+month_name = now.strftime("%m-%Y")
+current_time = now.strftime("%H:%M:%S")
+
+
+# ===============================
+#   ABHA main page
+# ===============================
+def abha_main():
+    st.divider()
+    render_target_dashboard(
+        month_name=month_name,
+        target=int(df.loc[df["Branches"] == "ABHA", "Target"].iloc[0].replace(",", "")),
+        achieved=int(df.loc[df["Branches"] == "ABHA", "Achieved"].iloc[0].replace(",", "")),
+    )
+    show_chart(old_df_name=df, branch_name="ABHA")
+
+
+# ===============================
+#   ALBAHA main page
+# ===============================
+def albaha_main():
+    st.divider()
+    render_target_dashboard(
+        month_name=month_name,
+        target=int(df.loc[df["Branches"] == "ALBAHA", "Target"].iloc[0].replace(",", "")),
+        achieved=int(df.loc[df["Branches"] == "ALBAHA", "Achieved"].iloc[0].replace(",", "")),
+    )
+
+    show_chart(old_df_name=df, branch_name="ALBAHA")
+
+
+# ===============================
+#   JAZAN main page
+# ===============================
+def jazan_main():
+    st.divider()
+    render_target_dashboard(
+        month_name=month_name,
+        target=int(df.loc[df["Branches"] == "JAZAN", "Target"].iloc[0].replace(",", "")),
+        achieved=int(df.loc[df["Branches"] == "JAZAN", "Achieved"].iloc[0].replace(",", "")),
+    )
+
+    show_chart(old_df_name=df, branch_name="JAZAN")
+
+
+# ===============================
+#   KHAMIS main page
+# ===============================
+def khamis_main():
+    st.divider()
+    render_target_dashboard(
+        month_name=month_name,
+        target=int(df.loc[df["Branches"] == "KHAMIS", "Target"].iloc[0].replace(",", "")),
+        achieved=int(df.loc[df["Branches"] == "KHAMIS", "Achieved"].iloc[0].replace(",", "")),
+    )
+
+    show_chart(old_df_name=df, branch_name="KHAMIS")
+
+
+# ===============================
+#   NAJRAN main page
+# ===============================
+def najran_main():
+    st.divider()
+    render_target_dashboard(
+        month_name=month_name,
+        target=int(df.loc[df["Branches"] == "NAJRAN", "Target"].iloc[0].replace(",", "")),
+        achieved=int(df.loc[df["Branches"] == "NAJRAN", "Achieved"].iloc[0].replace(",", "")),
+    )
+
+    show_chart(old_df_name=df, branch_name="NAJRAN")
