@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Maintain the security and update the structure and load a new data">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Maintain the security">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,14 +126,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772500195283</updated>
-    </task>
-    <task id="LOCAL-00001" summary="initl commit">
-      <option name="closed" value="true" />
-      <created>1772544775739</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1772544775739</updated>
     </task>
     <task id="LOCAL-00002" summary="initl commit">
       <option name="closed" value="true" />
@@ -519,7 +511,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777973296176</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Maintain the security">
+      <option name="closed" value="true" />
+      <created>1777973743974</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1777973743974</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -534,6 +534,13 @@
                     <value>
                       <list>
                         <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="text">
+                    <value>
+                      <list>
+                        <option value=".gitignore" />
                       </list>
                     </value>
                   </entry>
@@ -559,6 +566,7 @@
     <MESSAGE value="Clear the sidebar" />
     <MESSAGE value="Solve error" />
     <MESSAGE value="Maintain the security and update the structure and load a new data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maintain the security and update the structure and load a new data" />
+    <MESSAGE value="Maintain the security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Maintain the security" />
   </component>
 </project>
