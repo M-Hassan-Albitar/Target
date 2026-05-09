@@ -171,3 +171,7 @@ else:
         logout()
 
         st.rerun()
+    # ------------------ تحديث ------------------
+    if st.button("🔄 تحديث البيانات"):
+        st.cache_data.clear()
+        st.rerun()
