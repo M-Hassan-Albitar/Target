@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Update refresh button location">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,22 +126,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772500195283</updated>
-    </task>
-    <task id="LOCAL-00004" summary="update data">
-      <option name="closed" value="true" />
-      <created>1772586472445</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1772586472445</updated>
-    </task>
-    <task id="LOCAL-00005" summary="update data">
-      <option name="closed" value="true" />
-      <created>1772674917359</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1772674917359</updated>
     </task>
     <task id="LOCAL-00006" summary="update data">
       <option name="closed" value="true" />
@@ -519,7 +503,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778017492362</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Add refresh button to main page">
+      <option name="closed" value="true" />
+      <created>1778363015752</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1778363015757</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Update refresh button location">
+      <option name="closed" value="true" />
+      <created>1778363135239</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1778363135239</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,6 +568,8 @@
     <MESSAGE value="Maintain the security and update the structure and load a new data" />
     <MESSAGE value="Maintain the security" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="Add refresh button to main page" />
+    <MESSAGE value="Update refresh button location" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update refresh button location" />
   </component>
 </project>
