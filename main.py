@@ -126,6 +126,11 @@ else:
 
     st.markdown("### 🎉 تم تسجيل الدخول إلى النظام")
 
+    # ------------------ تحديث ------------------
+    if st.button("🔄 تحديث البيانات"):
+        st.cache_data.clear()
+        st.rerun()
+
     # Example protected content
     match st.session_state.username:
         case "Ka":
@@ -170,8 +175,4 @@ else:
     if st.button("تسجيل الخروج"):
         logout()
 
-        st.rerun()
-    # ------------------ تحديث ------------------
-    if st.button("🔄 تحديث البيانات"):
-        st.cache_data.clear()
         st.rerun()
