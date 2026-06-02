@@ -115,7 +115,7 @@ def c_analyze(csv_url):
         if phone.startswith("0"):
             phone = "966" + phone[1:]
 
-        message = f"مرحبا ، عندنا عروض وأقمشة جديدة في الفاخرة للخياطة الرجالية "
+        message = f"مرحبا ياغالي، جات الصيفية ، وجينا بعروض وأقمشة جديدة في الفاخرة للخياطة الرجالية "
         encoded_message = urllib.parse.quote(message)
 
         return f"https://wa.me/{phone}?text={encoded_message}"
@@ -126,7 +126,7 @@ def c_analyze(csv_url):
 
     bulk_message = st.text_area(
         "اكتب الرسالة",
-        "مرحبا، عندنا عروض خاصة لك 🔥"
+        "مرحبا، وصلت أحدث الأقمشة الصيفية لفروعنا الفاخرة 🔥"
     )
 
 
