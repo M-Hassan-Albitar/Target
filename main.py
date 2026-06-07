@@ -5,7 +5,6 @@ import customers
 from pages.branches_homepages import abha_main, albaha_main, jazan_main, khamis_main, najran_main
 import os
 from dotenv import load_dotenv
-from whatsSender import whats_sender
 
 load_dotenv()
 # Data
@@ -155,9 +154,8 @@ else:
         case "Kb":
             main_page = st.Page(khamis_main, title="الصفحة الرئيسية")
             analyze_page = st.Page(lambda: customers.c_analyze(KHAMIS_CSV_URL), title="العملاء")
-            whatsapp_page = st.Page(whats_sender, title="رسائل لتسليم الثياب")
             # Create navigation and run it
-            pg = st.navigation([main_page, analyze_page, whatsapp_page])
+            pg = st.navigation([main_page, analyze_page])
             pg.run()
         case "W":
             main_page = st.Page(najran_main, title="الصفحة الرئيسية")

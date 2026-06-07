@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Update whatsapp messages">
-      <change afterPath="$PROJECT_DIR$/whatsSender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Update requirements text">
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,22 +126,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772500195283</updated>
-    </task>
-    <task id="LOCAL-00010" summary="update data">
-      <option name="closed" value="true" />
-      <created>1773110528671</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1773110528673</updated>
-    </task>
-    <task id="LOCAL-00011" summary="update data">
-      <option name="closed" value="true" />
-      <created>1773224957511</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1773224957511</updated>
     </task>
     <task id="LOCAL-00012" summary="update data">
       <option name="closed" value="true" />
@@ -521,7 +503,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780386479703</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Add new useful feature">
+      <option name="closed" value="true" />
+      <created>1780817448103</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1780817448103</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Update requirements text">
+      <option name="closed" value="true" />
+      <created>1780817659844</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1780817659844</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -574,6 +572,8 @@
     <MESSAGE value="Update refresh button location" />
     <MESSAGE value="Remove refresh button" />
     <MESSAGE value="Update whatsapp messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update whatsapp messages" />
+    <MESSAGE value="Add new useful feature" />
+    <MESSAGE value="Update requirements text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update requirements text" />
   </component>
 </project>
