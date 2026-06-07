@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Remove refresh button">
+    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Update whatsapp messages">
+      <change afterPath="$PROJECT_DIR$/whatsSender.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,14 +128,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772500195283</updated>
-    </task>
-    <task id="LOCAL-00009" summary="update data">
-      <option name="closed" value="true" />
-      <created>1773051761729</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1773051761729</updated>
     </task>
     <task id="LOCAL-00010" summary="update data">
       <option name="closed" value="true" />
@@ -519,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778363387506</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Update whatsapp messages">
+      <option name="closed" value="true" />
+      <created>1780386479703</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1780386479703</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,6 +573,7 @@
     <MESSAGE value="Add refresh button to main page" />
     <MESSAGE value="Update refresh button location" />
     <MESSAGE value="Remove refresh button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove refresh button" />
+    <MESSAGE value="Update whatsapp messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update whatsapp messages" />
   </component>
 </project>
