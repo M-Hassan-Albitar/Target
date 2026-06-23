@@ -16,8 +16,8 @@ def load_data():
     fresh_url = f"{MAIN_DATA_URL}&t={int(time.time())}"
     return pd.read_csv(fresh_url)
 
+
 st_autorefresh(interval=10000, key="refresh")
-df = load_data()
 
 # Date and time
 # Get current date and time
@@ -32,6 +32,7 @@ current_time = now.strftime("%H:%M:%S")
 #   ABHA main page
 # ===============================
 def abha_main():
+    df = load_data()
     st.divider()
     render_target_dashboard(
         month_name=month_name,
@@ -45,6 +46,7 @@ def abha_main():
 #   ALBAHA main page
 # ===============================
 def albaha_main():
+    df = load_data()
     st.divider()
     render_target_dashboard(
         month_name=month_name,
@@ -59,6 +61,7 @@ def albaha_main():
 #   JAZAN main page
 # ===============================
 def jazan_main():
+    df = load_data()
     st.divider()
     render_target_dashboard(
         month_name=month_name,
@@ -73,6 +76,7 @@ def jazan_main():
 #   KHAMIS main page
 # ===============================
 def khamis_main():
+    df = load_data()
     st.divider()
     render_target_dashboard(
         month_name=month_name,
@@ -87,6 +91,7 @@ def khamis_main():
 #   NAJRAN main page
 # ===============================
 def najran_main():
+    df = load_data()
     st.divider()
     render_target_dashboard(
         month_name=month_name,
