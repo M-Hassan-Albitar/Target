@@ -1,10 +1,13 @@
 import streamlit as st
+from streamlit_autorefresh import st_autorefresh
 import hashlib
 from arabic_support import support_arabic_text
 import customers
 from pages.branches_homepages import abha_main, albaha_main, jazan_main, khamis_main, najran_main
 import os
 from dotenv import load_dotenv
+
+st_autorefresh(interval=20000, key="refresh")
 
 load_dotenv()
 # Data
