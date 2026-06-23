@@ -1,5 +1,6 @@
 import time
 import streamlit as st
+from streamlit_autorefresh import st_autorefresh
 from datetime import datetime
 from dashboard import render_target_dashboard, show_chart
 import pandas as pd
@@ -15,7 +16,7 @@ def load_data():
     fresh_url = f"{MAIN_DATA_URL}&t={int(time.time())}"
     return pd.read_csv(fresh_url)
 
-
+st_autorefresh(interval=10000, key="refresh")
 df = load_data()
 
 # Date and time

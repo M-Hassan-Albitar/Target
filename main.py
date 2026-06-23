@@ -7,7 +7,7 @@ from pages.branches_homepages import abha_main, albaha_main, jazan_main, khamis_
 import os
 from dotenv import load_dotenv
 
-st_autorefresh(interval=20000, key="refresh")
+st_autorefresh(interval=10000, key="refresh")
 
 load_dotenv()
 # Data
