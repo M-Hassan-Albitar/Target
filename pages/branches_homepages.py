@@ -1,3 +1,5 @@
+import time
+
 import streamlit as st
 from datetime import datetime
 from dashboard import render_target_dashboard, show_chart
@@ -8,7 +10,14 @@ from dotenv import load_dotenv
 load_dotenv()
 # Get data
 MAIN_DATA_URL = os.getenv("MAIN_DATA_URL")
-df = pd.read_csv(MAIN_DATA_URL)
+
+
+def load_data():
+    fresh_url = f"{MAIN_DATA_URL}&t={int(time.time())}"
+    return pd.read_csv(fresh_url)
+
+
+df = load_data()
 
 # Date and time
 # Get current date and time
