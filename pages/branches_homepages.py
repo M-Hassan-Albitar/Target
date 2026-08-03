@@ -24,7 +24,7 @@ st_autorefresh(interval=10000, key="refresh")
 now = datetime.now()
 today_date = now.strftime("%A, %d/%m/%Y")
 today = now.strftime("%d")
-month_name = now.strftime("%m-%Y")
+month_name = now.month
 current_time = now.strftime("%H:%M:%S")
 
 
