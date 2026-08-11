@@ -59,7 +59,7 @@ def hash_password(password):
 USERS_DB = {
     "admin": hash_password("1234"),
     "user1": hash_password("pass"),
-    "Ka": hash_password("M1"),
+    "Ka": hash_password("Mm1"),
     "L": hash_password("Y5"),
     "G": hash_password("A3"),
     "Kb": hash_password("H2"),
