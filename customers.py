@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import urllib.parse
 
+
 def c_analyze(csv_url):
     # ------------------ إعداد الصفحة ------------------
     st.set_page_config(page_title="العملاء")
@@ -23,7 +24,6 @@ def c_analyze(csv_url):
 
     # ------------------ رابط البيانات ------------------
     CSV_URL = csv_url
-
 
     # ------------------ تحميل البيانات ------------------
     @st.cache_data(ttl=30)
@@ -48,7 +48,6 @@ def c_analyze(csv_url):
         )
 
         return df
-
 
     df = load_data()
 
@@ -128,20 +127,30 @@ def c_analyze(csv_url):
         if phone.startswith("0"):
             phone = "966" + phone[1:]
 
-        message = f"مرحبا ياغالي، جات الصيفية ، وجينا بعروض وأقمشة جديدة في الفاخرة للخياطة الرجالية "
+        message = f"""ثوبك الرابع مجاناً من الفاخرة! 🧵✨
+بفرعنا ، نجمع لك خامة القماش الياباني الفاخر، مع عروض حصرية:
+🔹 الثوب الرابع مجاناً عند تفصيل 3 ثياب.
+🔹 خصم 25% لحاملي بطاقات البنك الأهلي.
+🔹 عروض العودة للمدارس لثياب الأطفال.
+🛡️ ضمان ذهبي 365 يوم على الحشوات.قم بزيارتنا اليوم لضبط مقاسك الفاخر: """
         encoded_message = urllib.parse.quote(message)
 
         return f"https://wa.me/{phone}?text={encoded_message}"
-
 
     # ------------------ رسالة جماعية ------------------
     st.markdown("### 📢 رسالة جماعية")
 
     bulk_message = st.text_area(
         "اكتب الرسالة",
-        "مرحبا، وصلت أحدث الأقمشة الصيفية لفروعنا الفاخرة 🔥"
+        """
+        ثوبك الرابع مجاناً من الفاخرة! 🧵✨
+بفرعنا ، نجمع لك خامة القماش الياباني الفاخر، مع عروض حصرية:
+🔹 الثوب الرابع مجاناً عند تفصيل 3 ثياب.
+🔹 خصم 25% لحاملي بطاقات البنك الأهلي.
+🔹 عروض العودة للمدارس لثياب الأطفال.
+🛡️ ضمان ذهبي 365 يوم على الحشوات.قم بزيارتنا اليوم لضبط مقاسك الفاخر:
+        """
     )
-
 
     def create_bulk_links(df, message):
         links = []
@@ -164,7 +173,6 @@ def c_analyze(csv_url):
             links.append(link)
 
         return links
-
 
     if st.button("🚀 تجهيز روابط الإرسال"):
         links = create_bulk_links(filtered_df, bulk_message)

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="Auto refresh data">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.py" afterDir="false" />
-    </list>
+    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="maintain the code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,14 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772500195283</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Add New Features">
-      <option name="closed" value="true" />
-      <created>1776159640697</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1776159640697</updated>
     </task>
     <task id="LOCAL-00020" summary="Update data">
       <option name="closed" value="true" />
@@ -527,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782212082346</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="maintain the code">
+      <option name="closed" value="true" />
+      <created>1788411227901</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1788411227902</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,6 +584,7 @@
     <MESSAGE value="Update requirements text" />
     <MESSAGE value="Delete feature" />
     <MESSAGE value="Auto refresh data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auto refresh data" />
+    <MESSAGE value="maintain the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="maintain the code" />
   </component>
 </project>
