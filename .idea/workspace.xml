@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="maintain the code" />
+    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="modify customers msgs" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,14 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772500195283</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Update data">
-      <option name="closed" value="true" />
-      <created>1776245041974</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1776245041974</updated>
     </task>
     <task id="LOCAL-00021" summary="Update data">
       <option name="closed" value="true" />
@@ -524,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788411227902</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="modify customers msgs">
+      <option name="closed" value="true" />
+      <created>1788412038595</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1788412038595</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,6 +585,7 @@
     <MESSAGE value="Delete feature" />
     <MESSAGE value="Auto refresh data" />
     <MESSAGE value="maintain the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="maintain the code" />
+    <MESSAGE value="modify customers msgs" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify customers msgs" />
   </component>
 </project>
