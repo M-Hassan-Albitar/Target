@@ -70,15 +70,28 @@ def c_analyze(csv_url):
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        min_val, max_val = st.slider(
-            "نطاق المشتريات",
-            int(df["قيمة المشتريات"].min()),
-            int(df["قيمة المشتريات"].max()),
-            (
-                int(df["قيمة المشتريات"].min()),
-                int(df["قيمة المشتريات"].max())
+        # 1. تنظيف البيانات وحساب الحد الأدنى والأقصى بأمان وتجاهل القيم الفارغة
+        purchases_clean = df["قيمة المشتريات"].dropna()
+
+        # التأكد من وجود بيانات أرقام فعلياً في العمود
+        if not purchases_clean.empty:
+            min_price = int(purchases_clean.min())
+            max_price = int(purchases_clean.max())
+        else:
+            min_price, max_price = 0, 100  # قيم افتراضية في حال كان العمود فارغاً تماماً
+
+        # 2. حماية الـ slider من الانهيار إذا تساوت القيمة الصغرى والكبرى (أو كانت البيانات فارغة)
+        if min_price == max_price:
+            min_val, max_val = min_price, max_price
+            st.info(f"قيمة المشتريات موحدة لجميع العملاء: {min_price} ريال")
+        else:
+            # تشغيل الـ slider بأمان لأن min_price أصغر من max_price قطعاً
+            min_val, max_val = st.slider(
+                "نطاق المشتريات",
+                min_value=min_price,
+                max_value=max_price,
+                value=(min_price, max_price)
             )
-        )
 
     with col2:
         sort_option = st.selectbox(
@@ -92,7 +105,8 @@ def c_analyze(csv_url):
             ["الكل", "VIP ⭐", "عادي"]
         )
 
-    # تطبيق الفلاتر
+    # تطبيق الفلاتر بأمان (تصفية القيم المفقودة لتجنب الأخطاء أثناء المقارنة)
+    filtered_df = filtered_df.dropna(subset=["قيمة المشتريات"])
     filtered_df = filtered_df[
         filtered_df["قيمة المشتريات"].between(min_val, max_val)
     ]
@@ -106,7 +120,6 @@ def c_analyze(csv_url):
         filtered_df = filtered_df.sort_values(by="قيمة المشتريات", ascending=False)
     elif sort_option == "الأقل":
         filtered_df = filtered_df.sort_values(by="قيمة المشتريات", ascending=True)
-
 
     # ------------------ واتساب فردي ------------------
     def create_whatsapp_link(phone):

@@ -23,7 +23,7 @@ def render_target_dashboard(
     percent = (achieved / target) * 100 if target else 0
 
     # estimate daily requirement (simple logic)
-    days_left = 31  # you can improve later dynamically
+    days_left = 30  # you can improve later dynamically
     daily_needed = remaining / days_left if days_left else 0
 
     # ---------------------------
