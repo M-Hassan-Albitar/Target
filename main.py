@@ -1,3 +1,180 @@
+# import streamlit as st
+# from streamlit_autorefresh import st_autorefresh
+# import hashlib
+# from arabic_support import support_arabic_text
+# import customers
+# from pages.branches_homepages import abha_main, albaha_main, jazan_main, khamis_main, najran_main
+# import os
+# from dotenv import load_dotenv
+#
+# st_autorefresh(interval=10000, key="refresh")
+#
+# load_dotenv()
+# # Data
+# ABHA_CSV_URL = os.getenv("ABHA_CSV_URL")
+# ALBAHA_CSV_URL = os.getenv("ALBAHA_CSV_URL")
+# JAZAN_CSV_URL = os.getenv("JAZAN_CSV_URL")
+# KHAMIS_CSV_URL = os.getenv("KHAMIS_CSV_URL")
+# NAJRAN_CSV_URL = os.getenv("NAJRAN_CSV_URL")
+#
+# # Arabic Support
+# support_arabic_text()
+#
+# # ---------------------------
+# # RTL + input alignment CSS
+# # ---------------------------
+# st.markdown("""
+#     <style>
+#     body {
+#         direction: rtl;
+#         text-align: right;
+#     }
+#
+#     /* Align text inside input fields */
+#     .stTextInput input {
+#         text-align: right;
+#     }
+#
+#     /* Align labels */
+#     h3, label {
+#         text-align: right !important;
+#         width: 100%;
+#     }
+#
+#     /* Button alignment */
+#     .stButton button {
+#         width: 100%;
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
+#
+#
+# # ---------------------------
+# # Fake database (replace later)
+# # ---------------------------
+# def hash_password(password):
+#     return hashlib.sha256(password.encode()).hexdigest()
+#
+#
+# USERS_DB = {
+#     "admin": hash_password("1234"),
+#     "user1": hash_password("pass"),
+#     "Ka": hash_password("Mm1"),
+#     "L": hash_password("Y5"),
+#     "G": hash_password("A3"),
+#     "Kb": hash_password("H2"),
+#     "W": hash_password("A4"),
+# }
+#
+# # ---------------------------
+# # Session state init
+# # ---------------------------
+# if "logged_in" not in st.session_state:
+#     st.session_state.logged_in = False
+#
+# if "username" not in st.session_state:
+#     st.session_state.username = ""
+#
+#
+# # ---------------------------
+# # Login function
+# # ---------------------------
+# def login(username, password):
+#     hashed = hash_password(password)
+#     if username in USERS_DB and USERS_DB[username] == hashed:
+#         st.session_state.logged_in = True
+#         st.session_state.username = username
+#         return True
+#     return False
+#
+#
+# # ---------------------------
+# # Logout function
+# # ---------------------------
+# def logout():
+#     st.session_state.logged_in = False
+#     st.session_state.username = ""
+#
+#
+# # ---------------------------
+# # UI
+# # ---------------------------
+# st.set_page_config(page_title="الفاخرة - المنطقة الجنوبية", layout="centered")
+#
+# if not st.session_state.logged_in:
+#     # Title
+#     st.markdown(
+#         "<h2 style='text-align: center;'>الفاخرة للخياطة الرجالية - المنطقة الجنوبية</h2>",
+#         unsafe_allow_html=True
+#     )
+#
+#     st.write("")
+#
+#     # Login form
+#     with st.form("login_form"):
+#         username = st.text_input("اسم المستخدم :")
+#         password = st.text_input("كلمة المرور :", type="password")
+#         submit = st.form_submit_button("دخول")
+#
+#     if submit:
+#         if login(username, password):
+#             st.success("تم تسجيل الدخول بنجاح")
+#             st.rerun()
+#         else:
+#             st.error("اسم المستخدم أو كلمة المرور غير صحيحة")
+#
+# else:
+#     # Logged-in view
+#     st.success(f"مرحباً، {st.session_state.username}")
+#
+#     st.markdown("### 🎉 تم تسجيل الدخول إلى النظام")
+#
+#     # Example protected content
+#     match st.session_state.username:
+#         case "Ka":
+#
+#             main_page = st.Page(abha_main, title="الصفحة الرئيسية")
+#             analyze_page = st.Page(lambda: customers.c_analyze(ABHA_CSV_URL), title="العملاء")
+#
+#             # Create navigation and run it
+#             pg = st.navigation([main_page, analyze_page])
+#             pg.run()
+#
+#         case "L":
+#             main_page = st.Page(albaha_main, title="الصفحة الرئيسية")
+#             analyze_page = st.Page(lambda: customers.c_analyze(ALBAHA_CSV_URL), title="العملاء")
+#
+#             # Create navigation and run it
+#             pg = st.navigation([main_page, analyze_page])
+#             pg.run()
+#         case "G":
+#             main_page = st.Page(jazan_main, title="الصفحة الرئيسية")
+#             analyze_page = st.Page(lambda: customers.c_analyze(JAZAN_CSV_URL), title="العملاء")
+#
+#             # Create navigation and run it
+#             pg = st.navigation([main_page, analyze_page])
+#             pg.run()
+#         case "Kb":
+#             main_page = st.Page(khamis_main, title="الصفحة الرئيسية")
+#             analyze_page = st.Page(lambda: customers.c_analyze(KHAMIS_CSV_URL), title="العملاء")
+#             # Create navigation and run it
+#             pg = st.navigation([main_page, analyze_page])
+#             pg.run()
+#         case "W":
+#             main_page = st.Page(najran_main, title="الصفحة الرئيسية")
+#             analyze_page = st.Page(lambda: customers.c_analyze(NAJRAN_CSV_URL), title="العملاء")
+#
+#             # Create navigation and run it
+#             pg = st.navigation([main_page, analyze_page])
+#             pg.run()
+#
+#     # Logout button
+#     if st.button("تسجيل الخروج"):
+#         logout()
+#
+#         st.rerun()
+# ====================================================================================
+
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 import hashlib
@@ -10,7 +187,8 @@ from dotenv import load_dotenv
 st_autorefresh(interval=10000, key="refresh")
 
 load_dotenv()
-# Data
+
+# Data URLs
 ABHA_CSV_URL = os.getenv("ABHA_CSV_URL")
 ALBAHA_CSV_URL = os.getenv("ALBAHA_CSV_URL")
 JAZAN_CSV_URL = os.getenv("JAZAN_CSV_URL")
@@ -29,19 +207,13 @@ st.markdown("""
         direction: rtl;
         text-align: right;
     }
-
-    /* Align text inside input fields */
     .stTextInput input {
         text-align: right;
     }
-
-    /* Align labels */
     h3, label {
         text-align: right !important;
         width: 100%;
     }
-
-    /* Button alignment */
     .stButton button {
         width: 100%;
     }
@@ -50,7 +222,7 @@ st.markdown("""
 
 
 # ---------------------------
-# Fake database (replace later)
+# Fake database
 # ---------------------------
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
@@ -75,6 +247,13 @@ if "logged_in" not in st.session_state:
 if "username" not in st.session_state:
     st.session_state.username = ""
 
+# متغيرات جديدة لحفظ بيانات الفرع الحالي بشكل آمن ومستقل
+if "current_branch_url" not in st.session_state:
+    st.session_state.current_branch_url = None
+
+if "current_branch_main" not in st.session_state:
+    st.session_state.current_branch_main = None
+
 
 # ---------------------------
 # Login function
@@ -84,6 +263,24 @@ def login(username, password):
     if username in USERS_DB and USERS_DB[username] == hashed:
         st.session_state.logged_in = True
         st.session_state.username = username
+
+        # تعيين الرابط والدالة الخاصة بالفرع مباشرة عند نجاح تسجيل الدخول
+        if username == "Ka":
+            st.session_state.current_branch_main = abha_main
+            st.session_state.current_branch_url = ABHA_CSV_URL
+        elif username == "L":
+            st.session_state.current_branch_main = albaha_main
+            st.session_state.current_branch_url = ALBAHA_CSV_URL
+        elif username == "G":
+            st.session_state.current_branch_main = jazan_main
+            st.session_state.current_branch_url = JAZAN_CSV_URL
+        elif username == "Kb":
+            st.session_state.current_branch_main = khamis_main
+            st.session_state.current_branch_url = KHAMIS_CSV_URL
+        elif username == "W":
+            st.session_state.current_branch_main = najran_main
+            st.session_state.current_branch_url = NAJRAN_CSV_URL
+
         return True
     return False
 
@@ -94,10 +291,12 @@ def login(username, password):
 def logout():
     st.session_state.logged_in = False
     st.session_state.username = ""
+    st.session_state.current_branch_url = None
+    st.session_state.current_branch_main = None
 
 
 # ---------------------------
-# UI
+# UI Configuration
 # ---------------------------
 st.set_page_config(page_title="الفاخرة - المنطقة الجنوبية", layout="centered")
 
@@ -125,51 +324,27 @@ if not st.session_state.logged_in:
 
 else:
     # Logged-in view
-    st.success(f"مرحباً، {st.session_state.username}")
+    st.sidebar.success(f"مرحباً، {st.session_state.username}")
 
-    st.markdown("### 🎉 تم تسجيل الدخول إلى النظام")
 
-    # Example protected content
-    match st.session_state.username:
-        case "Ka":
+    # دالة وسيطة مسمّاة ومستقرة لاستدعاء صفحة التحليل بدون استخدام lambda مجهول
+    def show_analyze_page():
+        if st.session_state.current_branch_url:
+            customers.c_analyze(st.session_state.current_branch_url)
+        else:
+            st.error("لم يتم العثور على بيانات هذا الفرع.")
 
-            main_page = st.Page(abha_main, title="الصفحة الرئيسية")
-            analyze_page = st.Page(lambda: customers.c_analyze(ABHA_CSV_URL), title="العملاء")
 
-            # Create navigation and run it
-            pg = st.navigation([main_page, analyze_page])
-            pg.run()
+    # بناء الملاحة بناءً على بيانات الفرع المخزنة في الجلسة بأمان
+    if st.session_state.current_branch_main:
+        main_page = st.Page(st.session_state.current_branch_main, title="الصفحة الرئيسية")
+        analyze_page = st.Page(show_analyze_page, title="العملاء")
 
-        case "L":
-            main_page = st.Page(albaha_main, title="الصفحة الرئيسية")
-            analyze_page = st.Page(lambda: customers.c_analyze(ALBAHA_CSV_URL), title="العملاء")
+        # تشغيل نظام الملاحة الموحد
+        pg = st.navigation([main_page, analyze_page])
+        pg.run()
 
-            # Create navigation and run it
-            pg = st.navigation([main_page, analyze_page])
-            pg.run()
-        case "G":
-            main_page = st.Page(jazan_main, title="الصفحة الرئيسية")
-            analyze_page = st.Page(lambda: customers.c_analyze(JAZAN_CSV_URL), title="العملاء")
-
-            # Create navigation and run it
-            pg = st.navigation([main_page, analyze_page])
-            pg.run()
-        case "Kb":
-            main_page = st.Page(khamis_main, title="الصفحة الرئيسية")
-            analyze_page = st.Page(lambda: customers.c_analyze(KHAMIS_CSV_URL), title="العملاء")
-            # Create navigation and run it
-            pg = st.navigation([main_page, analyze_page])
-            pg.run()
-        case "W":
-            main_page = st.Page(najran_main, title="الصفحة الرئيسية")
-            analyze_page = st.Page(lambda: customers.c_analyze(NAJRAN_CSV_URL), title="العملاء")
-
-            # Create navigation and run it
-            pg = st.navigation([main_page, analyze_page])
-            pg.run()
-
-    # Logout button
-    if st.button("تسجيل الخروج"):
+    # زر تسجيل الخروج في القائمة الجانبية (Sidebar) ليكون تصميمه متناسقاً مع الملاحة
+    if st.sidebar.button("تسجيل الخروج"):
         logout()
-
         st.rerun()
