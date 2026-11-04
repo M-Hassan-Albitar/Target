@@ -187,7 +187,6 @@ from dotenv import load_dotenv
 st_autorefresh(interval=10000, key="refresh")
 
 load_dotenv()
-
 # Data URLs
 ABHA_CSV_URL = os.getenv("ABHA_CSV_URL")
 ALBAHA_CSV_URL = os.getenv("ALBAHA_CSV_URL")
@@ -247,7 +246,7 @@ if "logged_in" not in st.session_state:
 if "username" not in st.session_state:
     st.session_state.username = ""
 
-# متغيرات جديدة لحفظ بيانات الفرع الحالي بشكل آمن ومستقل
+# متغيرات الجلسة لعزل بيانات الفرع النشط وتفادي تداخل الـ lambda
 if "current_branch_url" not in st.session_state:
     st.session_state.current_branch_url = None
 
@@ -264,7 +263,7 @@ def login(username, password):
         st.session_state.logged_in = True
         st.session_state.username = username
 
-        # تعيين الرابط والدالة الخاصة بالفرع مباشرة عند نجاح تسجيل الدخول
+        # ربط قيم الفرع الحالي بشكل معزول ومستقل فور نجاح الدخول
         if username == "Ka":
             st.session_state.current_branch_main = abha_main
             st.session_state.current_branch_url = ABHA_CSV_URL
@@ -296,7 +295,7 @@ def logout():
 
 
 # ---------------------------
-# UI Configuration
+# UI Setup
 # ---------------------------
 st.set_page_config(page_title="الفاخرة - المنطقة الجنوبية", layout="centered")
 
@@ -327,7 +326,7 @@ else:
     st.sidebar.success(f"مرحباً، {st.session_state.username}")
 
 
-    # دالة وسيطة مسمّاة ومستقرة لاستدعاء صفحة التحليل بدون استخدام lambda مجهول
+    # دالة وسيطة ثابتة لقراءة الرابط المعزول في الجلسة بدلاً من الـ lambda
     def show_analyze_page():
         if st.session_state.current_branch_url:
             customers.c_analyze(st.session_state.current_branch_url)
@@ -335,16 +334,16 @@ else:
             st.error("لم يتم العثور على بيانات هذا الفرع.")
 
 
-    # بناء الملاحة بناءً على بيانات الفرع المخزنة في الجلسة بأمان
+    # بناء الملاحة تلقائياً بناءً على بيانات الجلسة المؤمنة للمستخدم الحالي دون تكرار الكود
     if st.session_state.current_branch_main:
         main_page = st.Page(st.session_state.current_branch_main, title="الصفحة الرئيسية")
         analyze_page = st.Page(show_analyze_page, title="العملاء")
 
-        # تشغيل نظام الملاحة الموحد
+        # تشغيل شريط الملاحة بشكل موحد ومستقر
         pg = st.navigation([main_page, analyze_page])
         pg.run()
 
-    # زر تسجيل الخروج في القائمة الجانبية (Sidebar) ليكون تصميمه متناسقاً مع الملاحة
+    # نقل زر تسجيل الخروج إلى القائمة الجانبية (Sidebar) ليتناسب مع تصميم نظام الملاحة
     if st.sidebar.button("تسجيل الخروج"):
         logout()
         st.rerun()
