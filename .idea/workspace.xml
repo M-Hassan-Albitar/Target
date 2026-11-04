@@ -135,14 +135,6 @@
       <option name="presentableId" value="Default" />
       <updated>1772500195283</updated>
     </task>
-    <task id="LOCAL-00022" summary="Update data">
-      <option name="closed" value="true" />
-      <created>1776426218519</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1776426218521</updated>
-    </task>
     <task id="LOCAL-00023" summary="Update data">
       <option name="closed" value="true" />
       <created>1776850637607</created>
@@ -527,7 +519,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788412375523</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="modify customers msgs">
+      <option name="closed" value="true" />
+      <created>1791145317229</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1791145317230</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
