@@ -5,7 +5,7 @@ import urllib.parse
 
 def c_analyze(csv_url):
     # ------------------ إعداد الصفحة ------------------
-    st.set_page_config(page_title="العملاء")
+    # تم إزالة st.set_page_config من هنا لأنها يجب أن تستدعى مرة واحدة فقط في الملف الرئيسي المساعد للملاحة لتجنب المشاكل.
 
     st.markdown("""
     <style>
@@ -22,13 +22,11 @@ def c_analyze(csv_url):
     st.markdown("### 📇 شاشة العملاء")
     st.markdown("##### إدارة العملاء + بحث + تصنيف + واتساب")
 
-    # ------------------ رابط البيانات ------------------
-    CSV_URL = csv_url
-
-    # ------------------ تحميل البيانات ------------------
+    # ------------------ تحميل البيانات (مصححة الكاش) ------------------
+    # تمرير csv_url كمعامل هنا يجبر Streamlit على إنشاء كاش منفصل ومستقل لكل رابط فرع!
     @st.cache_data(ttl=30)
-    def load_data():
-        df = pd.read_csv(CSV_URL)
+    def load_data(url):
+        df = pd.read_csv(url)
 
         # تنظيف رقم الجوال
         df["رقم الجوال"] = df["رقم الجوال"].astype(str).str.replace(" ", "")
@@ -49,7 +47,8 @@ def c_analyze(csv_url):
 
         return df
 
-    df = load_data()
+    # استدعاء الدالة مع تمرير الرابط الخاص بالفرع ديناميكياً
+    df = load_data(csv_url)
 
     # ------------------ البحث ------------------
     st.markdown("### 🔎 بحث")
@@ -69,22 +68,18 @@ def c_analyze(csv_url):
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        # 1. تنظيف البيانات وحساب الحد الأدنى والأقصى بأمان وتجاهل القيم الفارغة
         purchases_clean = df["قيمة المشتريات"].dropna()
 
-        # التأكد من وجود بيانات أرقام فعلياً في العمود
         if not purchases_clean.empty:
             min_price = int(purchases_clean.min())
             max_price = int(purchases_clean.max())
         else:
-            min_price, max_price = 0, 100  # قيم افتراضية في حال كان العمود فارغاً تماماً
+            min_price, max_price = 0, 100
 
-        # 2. حماية الـ slider من الانهيار إذا تساوت القيمة الصغرى والكبرى (أو كانت البيانات فارغة)
         if min_price == max_price:
             min_val, max_val = min_price, max_price
             st.info(f"قيمة المشتريات موحدة لجميع العملاء: {min_price} ريال")
         else:
-            # تشغيل الـ slider بأمان لأن min_price أصغر من max_price قطعاً
             min_val, max_val = st.slider(
                 "نطاق المشتريات",
                 min_value=min_price,
@@ -104,7 +99,6 @@ def c_analyze(csv_url):
             ["الكل", "VIP ⭐", "عادي"]
         )
 
-    # تطبيق الفلاتر بأمان (تصفية القيم المفقودة لتجنب الأخطاء أثناء المقارنة)
     filtered_df = filtered_df.dropna(subset=["قيمة المشتريات"])
     filtered_df = filtered_df[
         filtered_df["قيمة المشتريات"].between(min_val, max_val)
@@ -127,13 +121,11 @@ def c_analyze(csv_url):
         if phone.startswith("0"):
             phone = "966" + phone[1:]
 
-        message = f"""
-        كشخة الشتاء! 🧵✨
+        message = """كشخة الشتاء! 🧵✨
 بفرعنا ، لحق على أحدث التشكيلات الشتوية مع أقوى العروض الحصرية
-🛡️ ضمان ذهبي 365 يوم على الحشوات.قم بزيارتنا اليوم لضبط مقاسك الفاخر
-        """
-        encoded_message = urllib.parse.quote(message)
+🛡️ ضمان ذهبي 365 يوم على الحشوات. قم بزيارتنا اليوم لضبط مقاسك الفاخر"""
 
+        encoded_message = urllib.parse.quote(message)
         return f"https://wa.me/{phone}?text={encoded_message}"
 
     # ------------------ رسالة جماعية ------------------
@@ -141,23 +133,20 @@ def c_analyze(csv_url):
 
     bulk_message = st.text_area(
         "اكتب الرسالة",
-        """
-        كشخة الشتاء! 🧵✨
+        """كشخة الشتاء! 🧵✨
 بفرعنا ، لحق على أحدث التشكيلات الشتوية مع أقوى العروض الحصرية
-🛡️ ضمان ذهبي 365 يوم على الحشوات.قم بزيارتنا اليوم لضبط مقاسك الفاخر
-        """
+🛡️ ضمان ذهبي 365 يوم على الحشوات. قم بزيارتنا اليوم لضبط مقاسك الفاخر"""
     )
 
-    def create_bulk_links(df, message):
+    def create_bulk_links(df_data, message):
         links = []
 
-        for _, row in df.iterrows():
+        for _, row in df_data.iterrows():
             phone = str(row["رقم الجوال"])
 
             if phone.startswith("0"):
                 phone = "966" + phone[1:]
 
-            # تخصيص الرسالة حسب التصنيف
             if row["تصنيف العميل"] == "VIP ⭐":
                 msg = f"{message} 💎 عميلنا المميز "
             else:
@@ -165,14 +154,12 @@ def c_analyze(csv_url):
 
             text = urllib.parse.quote(msg)
             link = f"https://wa.me/{phone}?text={text}"
-
             links.append(link)
 
         return links
 
     if st.button("🚀 تجهيز روابط الإرسال"):
         links = create_bulk_links(filtered_df, bulk_message)
-
         st.success(f"تم إنشاء {len(links)} رابط")
 
         for link in links:
@@ -182,13 +169,12 @@ def c_analyze(csv_url):
     st.markdown("### 📊 ملخص")
 
     c1, c2, c3 = st.columns(3)
-
     c1.metric("عدد العملاء", len(filtered_df))
 
     total_purchases = filtered_df["قيمة المشتريات"].sum()
     c2.metric("إجمالي المشتريات", int(total_purchases))
 
-    avg_purchases = filtered_df["قيمة المشتريات"].mean()
+    avg_purchases = filtered_df["قيمة المشتريات"].mean() if len(filtered_df) > 0 else 0
     c3.metric("متوسط الشراء", round(avg_purchases, 2))
 
     # ------------------ عرض البيانات ------------------
@@ -197,14 +183,13 @@ def c_analyze(csv_url):
     for _, row in filtered_df.iterrows():
         col1, col2, col3, col4, col5 = st.columns([3, 2, 2, 2, 2])
 
+        col1.write(row.get("اسم العميل", "عميل"))  # تم إضافته ليعرض الاسم إذا كان متوفراً في ملف الفرع
         col2.write(row["رقم الجوال"])
         col3.write(f"{int(row['قيمة المشتريات'])} ريال")
         col4.write(row["تصنيف العميل"])
 
-        whatsapp_link = create_whatsapp_link(
-            row["رقم الجوال"],
-        )
-
+        # تصحيح استدعاء الدالة وإزالة الفاصلة الزائدة
+        whatsapp_link = create_whatsapp_link(row["رقم الجوال"])
         col5.link_button("📲 واتساب", whatsapp_link)
 
     # ------------------ تحديث ------------------

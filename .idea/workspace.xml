@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="modify customers msgs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="382dc0e3-547a-43d6-ad43-e781fa9e6cd7" name="Changes" comment="modify code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,22 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772500195283</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Create huge changes">
-      <option name="closed" value="true" />
-      <created>1777726981232</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1777726981232</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Update little feature">
-      <option name="closed" value="true" />
-      <created>1777727676491</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1777727676491</updated>
     </task>
     <task id="LOCAL-00030" summary="Update the app theme">
       <option name="closed" value="true" />
@@ -527,7 +508,23 @@
       <option name="project" value="LOCAL" />
       <updated>1793789234568</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="modify code">
+      <option name="closed" value="true" />
+      <created>1793789801668</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1793789801669</updated>
+    </task>
+    <task id="LOCAL-00078" summary="modify code">
+      <option name="closed" value="true" />
+      <created>1793790103053</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1793790103054</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initl commit" />
     <MESSAGE value="update data" />
     <MESSAGE value="Add New Features" />
     <MESSAGE value="Update data" />
@@ -582,6 +578,7 @@
     <MESSAGE value="Auto refresh data" />
     <MESSAGE value="maintain the code" />
     <MESSAGE value="modify customers msgs" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify customers msgs" />
+    <MESSAGE value="modify code" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify code" />
   </component>
 </project>
